@@ -1,0 +1,15 @@
+<div class="task-list">
+  <h2>Tasks</h2>
+  <ul>
+    @for (task of tasks(); track task.id) {
+      <li>
+        <strong>{{ task.title }}</strong> - Priority: {{ task.priority }}
+      </li>
+    }
+  </ul>
+
+  <div class="add-task">
+    <input type="text" [ngModel]="newTaskTitle()" (ngModelChange)="newTaskTitle.set($event)" placeholder="New Task Title">
+    <button (click)="addTask()">Add Task</button>
+  </div>
+</div>
